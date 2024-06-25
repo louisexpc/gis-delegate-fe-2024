@@ -1,9 +1,10 @@
-import { Accordion, Table } from "react-bootstrap";
+import { Accordion, Table ,Image} from "react-bootstrap";
 interface IEvent {
   time: string;
   name: string;
   location: string;
   content?: object;
+  imageUrl?: string;
 }
 
 interface EventProps {
@@ -20,6 +21,15 @@ const Event = ({ event }: EventProps) => {
           </Accordion.Header>
           <Accordion.Body className="tw-text-white tw-bg-gis-blue">
             <p className="last:tw-mb-0">{event.location}</p>
+            {event.imageUrl && (
+              <div className="tw-mb-4 tw-flex tw-justify-center">
+                <img
+                  src={event.imageUrl}
+                  alt="Event Image"
+                  style={{ maxWidth: '100%', maxHeight: '300px', display: 'block', margin: '0 auto' }}
+                />
+              </div>
+            )}
             {event.content ? (
               <Table striped className="table tw-bg-[#e7f1ff]">
                 <tbody>

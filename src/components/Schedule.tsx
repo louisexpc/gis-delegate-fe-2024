@@ -4,7 +4,8 @@ import { fetchSchedule, IScheduleData } from "../axios";
 import InfoCard from "./InfoCard";
 import Day from "./Day";
 import Loader from "./Loader";
-
+import gala_f from "../images/schedule/gala_first_half.png";
+import gala_s from "../images/schedule/gala_second_half.png";
 
 interface ScheduleProps {
   giscode: string;
@@ -155,7 +156,7 @@ const Schedule = ({ giscode }: ScheduleProps) => {
               location: info.day4_lunch,
             },
             {
-              time: "12:30 - 18:00",
+              time: "12:30 - 16:20",
               name: "Leaders Dialogue",
               location: "W Hotel 8F Mega Room",
               content: {
@@ -163,6 +164,18 @@ const Schedule = ({ giscode }: ScheduleProps) => {
                 "Round 2": info.round2,
                 "Round 3": info.round3,
               },
+            },
+            {
+              time: "16:20 - 17:00",
+              name: "GALA - First Half",
+              location: "W Hotel 8F Mega Room",
+              imageUrl: gala_f,
+            },
+            {
+              time: "17:20 - 18:00",
+              name: "GALA - Second Half",
+              location: "W Hotel 8F Mega Room",
+              imageUrl: gala_s,
             },
             {
               time: "18:00 - 21:20",
